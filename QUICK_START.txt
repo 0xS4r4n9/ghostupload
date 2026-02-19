@@ -1,0 +1,176 @@
+╔═══════════════════════════════════════════════════════════════════╗
+║                                                                   ║
+║      ███████╗██╗██╗     ███████╗    ██╗   ██╗██████╗            ║
+║      ██╔════╝██║██║     ██╔════╝    ██║   ██║██╔══██╗           ║
+║      █████╗  ██║██║     █████╗      ██║   ██║██████╔╝           ║
+║      ██╔══╝  ██║██║     ██╔══╝      ██║   ██║██╔═══╝            ║
+║      ██║     ██║███████╗███████╗    ╚██████╔╝██║                ║
+║      ╚═╝     ╚═╝╚══════╝╚══════╝     ╚═════╝ ╚═╝                ║
+║                                                                   ║
+║            FILE UPLOAD VULNERABILITY SCANNER v1.0                ║
+║                   Created by: 0xS4r4n9                          ║
+║                                                                   ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+🚀 QUICK START GUIDE
+═══════════════════════════════════════════════════════════════════
+
+📋 STEP 1: INSTALLATION
+─────────────────────────────────────────────────────────────────
+Run the setup script:
+    bash setup.sh
+
+Or install manually:
+    pip install -r requirements.txt
+    chmod +x upload_scanner.py
+
+
+🎯 STEP 2: BASIC USAGE
+─────────────────────────────────────────────────────────────────
+Simple scan:
+    python upload_scanner.py -u http://target.com/upload
+
+With report:
+    python upload_scanner.py -u http://target.com/upload -o report.txt
+
+Verbose mode:
+    python upload_scanner.py -u http://target.com/upload -v
+
+Full options:
+    python upload_scanner.py -u http://target.com/upload -v -o report.txt
+
+
+📚 STEP 3: READ DOCUMENTATION
+─────────────────────────────────────────────────────────────────
+README.md          → Project overview and features
+HOW_TO_USE.md      → Detailed usage guide and examples
+PROJECT_SUMMARY.md → Complete project information
+
+
+🔍 WHAT IT TESTS (42+ Test Cases)
+═══════════════════════════════════════════════════════════════════
+
+Phase 0: Discovery
+  ✓ Automatic form detection
+  ✓ AJAX endpoint discovery
+  ✓ CSRF token handling
+
+Phase 1: Extension Bypass (12 tests)
+  ✓ Double extensions (shell.php.jpg)
+  ✓ Trailing dots/spaces
+  ✓ Case manipulation
+  ✓ Null byte injection
+  ✓ Unicode tricks
+
+Phase 2: MIME Spoofing (7 tests)
+  ✓ Content-Type manipulation
+  ✓ Script masquerading as images
+
+Phase 3: Magic Bytes (3 tests)
+  ✓ Polyglot files
+  ✓ Valid headers + malicious payload
+
+Phase 5: Stored XSS (3 tests)
+  ✓ SVG with scripts
+  ✓ HTML uploads
+  ✓ Event handlers
+
+Phase 6: Path Traversal (5 tests)
+  ✓ Directory traversal
+  ✓ Webroot escape
+
+Phase 7: File Overwrite (4 tests)
+  ✓ Critical file replacement
+  ✓ Config manipulation
+
+Phase 9: Size Limits (4 tests)
+  ✓ DoS potential
+  ✓ Size restrictions
+
+Phase 12: Security Headers (4 tests)
+  ✓ Content-Disposition
+  ✓ X-Content-Type-Options
+
+
+📊 OUTPUT FORMATS
+═══════════════════════════════════════════════════════════════════
+
+Terminal Output:
+  🟢 [+] Success messages
+  🔵 [*] Informational
+  🟡 [!] Warnings
+  🔴 [-] Errors/Critical
+
+Reports (when using -o):
+  report.txt  → Human-readable text
+  report.json → Machine-readable JSON
+
+
+⚠️  LEGAL DISCLAIMER
+═══════════════════════════════════════════════════════════════════
+
+ALWAYS OBTAIN AUTHORIZATION BEFORE TESTING!
+
+✅ DO:
+  • Test your own systems
+  • Use with explicit permission
+  • Test in lab environments
+
+❌ DON'T:
+  • Test without authorization
+  • Use for malicious purposes
+  • Deploy actual malware
+
+Unauthorized access is ILLEGAL. Use responsibly!
+
+
+🎓 EXAMPLES
+═══════════════════════════════════════════════════════════════════
+
+Test your website:
+    python upload_scanner.py -u http://mysite.com/upload -v
+
+Bug bounty testing:
+    python upload_scanner.py -u https://target.com/upload -o bounty.txt
+
+Pentest engagement:
+    python upload_scanner.py -u http://client.com/upload -v -o client_scan.txt
+
+
+💡 TIPS
+═══════════════════════════════════════════════════════════════════
+
+• Start with basic scan, then add -v if needed
+• Always save reports with -o for documentation
+• Review HOW_TO_USE.md for advanced features
+• Check examples.py for programmatic usage
+• Customize tests in config.example.py
+
+
+🆘 NEED HELP?
+═══════════════════════════════════════════════════════════════════
+
+Show help:        python upload_scanner.py --help
+Show version:     python upload_scanner.py --version
+View examples:    python examples.py
+
+
+📞 SUPPORT
+═══════════════════════════════════════════════════════════════════
+
+Documentation:
+  • README.md - Overview
+  • HOW_TO_USE.md - Detailed guide
+  • PROJECT_STRUCTURE.md - Technical details
+  • CONTRIBUTING.md - How to contribute
+
+
+═══════════════════════════════════════════════════════════════════
+
+Created by: 0xS4r4n9
+Version: 1.0.0
+License: MIT
+
+Happy ethical hacking! 🛡️🔐
+
+═══════════════════════════════════════════════════════════════════
